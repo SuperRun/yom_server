@@ -1,0 +1,28 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "mysql",
+        "uri": "${process.env.DATABASE_URI || ''}",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
+        "port": "${process.env.DATABASE_PORT || 3306}",
+        "database": "${process.env.DATABASE_NAME || 'yom'}",
+        "username": "${process.env.DATABASE_USERNAME || 'root'}",
+        "password": "${process.env.DATABASE_PASSWORD || '123456'}"
+      },
+      "options": {
+        "ssl": "${process.env.DATABASE_SSL || false}",
+        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}",
+        "pool": {
+          "min": 0,
+          "max": 5,
+          "idleTimeoutMillis": 3000000,
+          "createTimeoutMillis": 3000000,
+          "acquireTimeoutMillis": 3000000
+        }
+      }
+    }
+  }
+}
